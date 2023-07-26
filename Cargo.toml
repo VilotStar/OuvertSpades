@@ -1,0 +1,27 @@
+[package]
+name = "ouvert_spades"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+retour = {version = "0.3.1", features = ["static-detour"]}
+mlua = { version = "0.8.9", features = ["luau", "vendored"] }
+egui = "0.22.0"
+egui_extras = "0.22.0"
+egui-opengl-internal = { git = "https://github.com/mfloob/egui-opengl-internal.git" }
+poggers = { git = "https://github.com/pozm/poggers.git" }
+poggers-derive = { git = "https://github.com/pozm/poggers.git"}
+
+[dependencies.windows]
+version = "0.48"
+features = [
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Graphics_Gdi",
+    "Win32_Graphics_OpenGL",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Console"
+]
