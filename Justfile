@@ -7,10 +7,10 @@ alias bd := dbuild
 default: build
 
 build:
-    cargo build --release
+    cargo build --release --target i686-pc-windows-msvc
 
 dbuild:
-    cargo build
+    cargo build --target i686-pc-windows-msvc
 
 fmt:
     cargo fmt
