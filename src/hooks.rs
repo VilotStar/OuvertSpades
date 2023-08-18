@@ -9,7 +9,9 @@ pub mod OpenSpades {
     pub fn netclient_doevents(this: This, dt: i32) {
         println!("Hey it got called");
 
-        unsafe { NetClient_DoEvents.call(this, dt); }
+        unsafe {
+            NetClient_DoEvents.call(this, dt);
+        }
     }
 }
 

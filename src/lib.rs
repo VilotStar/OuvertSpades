@@ -1,9 +1,13 @@
-use poggers::{exports::HMODULE, structures::process::{Process, implement::utils::ProcessUtils}};
+use poggers::{
+    exports::HMODULE,
+    structures::process::{implement::utils::ProcessUtils, Process},
+};
 
 use lua::OuvertLua;
 
 pub mod hooks;
 pub mod lua;
+pub mod ui;
 pub mod util;
 
 // struct OuvertState {
@@ -14,7 +18,7 @@ pub mod util;
 #[poggers_derive::create_entry(no_free)]
 fn entry(_hmodule: HMODULE) -> Result<(), Box<dyn std::error::Error>> {
     let process = Process::this_process();
-    let module  = process.get_module("OpenSpades.exe")?;
+    let module = process.get_module("OpenSpades.exe")?;
     let base_address = module.get_base_address();
 
     println!("Injected yayayay: {:x}", base_address);
@@ -29,7 +33,6 @@ fn entry(_hmodule: HMODULE) -> Result<(), Box<dyn std::error::Error>> {
         }
         Err(err) => return Err(Box::new(err)),
     }
-
 
     Ok(())
 }

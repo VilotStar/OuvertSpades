@@ -12,6 +12,8 @@ retour-utils = "0.2.1"
 mlua = { version = "0.8.9", features = ["luau", "vendored"] }
 poggers = { git = "https://github.com/pozm/poggers.git" }
 poggers-derive = { git = "https://github.com/pozm/poggers.git"}
+hudhook = "0.4.0"
+imgui = "0.11.0"
 
 [dependencies.windows]
 version = "0.51.1"
